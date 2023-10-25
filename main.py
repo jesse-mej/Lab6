@@ -1,16 +1,34 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, github')  # Press ⌘F8 to toggle the breakpoint.
+def encode(password):
+    final_password = "" # string to be concatenated
+    for num in password: # go through each digit
+        shifted_num = (int(num) + 3) # add 3 to digit
+        corrected_num = shifted_num%10  # for numbers like 7,8,9 mod 10 will shift it correctly up i.e. 12 becomes 2
+        final_password += str(corrected_num)
+    return final_password
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def main():
+    while True:
+        print("Menu")
+        print("-------------")
+        print("1. Encode")
+        print("2. Decode")
+        print("3. Quit")
+        print()
+        selection = input("Please enter an option: ")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        if selection == '1':
+            password = input("Please enter your password to encode: ")
+            encoded_password = encode(password)
+            print("Your password has been encoded and stored!")
+            print()
+
+        elif selection == '2':
+            # not done yet
+
+        elif selection == '3':
+            break
+
+
+if __name__ == "__main__":
+    main()
