@@ -1,3 +1,5 @@
+#  Jesse Mejia
+
 def encode(password):
     final_password = "" # string to be concatenated
     for num in password: # go through each digit
