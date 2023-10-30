@@ -8,6 +8,14 @@ def encode(password):
         final_password += str(corrected_num)
     return final_password
 
+def decode(final_password):
+    new_pass = ""
+    for x in final_password:
+        shifted_num = int(x) - 3 # subtracts 3
+        new_shift = shifted_num % 10 # correctly shifts numbers that will add to greater than 10
+        new_pass += str(new_shift) # adds to string
+    print('The encoded password is', final_password, ',and the original password is', new_pass, '.')
+
 
 def main():
     while True:
@@ -26,7 +34,7 @@ def main():
             print()
 
         elif selection == '2':
-            # not done yet
+            decode(encode(password))
 
         elif selection == '3':
             break
